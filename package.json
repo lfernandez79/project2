@@ -1,16 +1,15 @@
 {
-  "name": "1-Passport-Example",
+  "name": "project2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+
     "watch": "nodemon server.js",
     "lint": "eslint --quite",
-    "fix": "eslint --fix",
-   
-
+    "fix": "eslint --fix"
 
   },
   "keywords": [],
@@ -24,6 +23,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
+
   },
   "repository": {
     "type": "git",
