@@ -5,7 +5,7 @@ var session = require("express-session");
 var passport = require("./config/passport");
 require("dotenv").config();
 
-console.log(process.env.MYTEST);
+console.log(process.env.zomatoApiKey);
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
