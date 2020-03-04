@@ -30,12 +30,6 @@ passport.use(
           });
         }
         // If none of the above, return the user
-        // else if (!dbUser.validPassword(passport)) {
-        //   return done(null, false, {
-        //     message: "Incorrect password"
-        //   });
-        // }
-        // if everything is good retunr user
         return done(null, dbUser);
       });
     }
