@@ -1,17 +1,2 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 node_modules/
-.env
-=======
-node_modules
-<<<<<<< HEAD
-.env
->>>>>>> 9076550ec3cea0e3af298cb490ab2710c4984ecf
-=======
-.env
->>>>>>> 1100b875503f8227b4ffae406e938dc27f28c230
-=======
-node_modules/
-.env
-.vscode/
->>>>>>> 87f9faa909f2d824d6bb2bb2eea6ce5f9dc4e059
+.env 
