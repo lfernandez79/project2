@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "2.4.3",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
 <<<<<<< HEAD
 =======
@@ -23,11 +24,11 @@
 >>>>>>> 99179959c2c5c4f13b9720e7dd99475c0f5cbac1
     "express": "^4.17.0",
     "express-session": "^1.16.1",
-    "mysql2": "^1.6.5",
+    "mysql2": "^1.7.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "prettier": "^1.13.7",
-    "sequelize": "^5.8.6"
+    "sequelize": "^5.21.5"
   },
   "repository": {
     "type": "git",

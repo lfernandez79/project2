@@ -3,8 +3,13 @@ var express = require("express");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+<<<<<<< HEAD
 require("dontenv").config()
+=======
+require("dotenv").config();
+>>>>>>> 87f9faa909f2d824d6bb2bb2eea6ce5f9dc4e059
 
+console.log(process.env.MYTEST);
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
