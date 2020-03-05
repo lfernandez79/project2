@@ -4,7 +4,12 @@ var session = require("express-session");
 var exphbs = require("express-handlebars");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+<<<<<<< HEAD
 require("dontenv").config()
+=======
+var exphbs = require("express-handlebars");
+require("dotenv").config();
+>>>>>>> f1e298546cb28666ced362ceb22d2341f1a29240
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -19,6 +24,10 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // We need to use sessions to keep track of our user's login status
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
