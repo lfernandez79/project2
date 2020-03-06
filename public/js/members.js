@@ -11,7 +11,7 @@ $(document).ready(function() {
       city: $("#city-input")
         .val()
         .trim(),
-      establishment: $("establishment-input")
+      establishment: $("#establishment-input")
         .val()
         .trim(),
       itemsOrdered: $("#itemsOrdered-input")
