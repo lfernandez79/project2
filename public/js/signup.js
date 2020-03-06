@@ -36,8 +36,8 @@ $(document).ready(function() {
   }
 
   function handleLoginErr(err) {
-    if (err.responseJSON.errors[0].message === "users.email must be unique"){
-      const errTxt = 'Email already in use!';
+    if (err.responseJSON.errors[0].message === "users.email must be unique") {
+      const errTxt = "Email already in use!";
       $("#alert .msg").text(errTxt);
     }
     $("#alert").fadeIn(500);
