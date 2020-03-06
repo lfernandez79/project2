@@ -2,3 +2,150 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+section{
+
+  height: 90vh;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: relative;
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8,  #dd00f3, #dd00f3);
+background-size: 1000% 1000%;
+
+
+
+-webkit-animation: rainbow 30s ease infinite;
+-z-animation: rainbow 30s ease infinite;
+-o-animation: rainbow 30s ease infinite;
+  animation: rainbow 30s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+   
+}
+section:before{
+  position: absolute;
+  content: '';
+  height: 150px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-image: url(../img/wave1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-section{
+  margin:0 auto;
+  margin-top: 5%;
+  padding: 0;
+}
+
+.modal-content{
+  background-color: #ebedee;
+  opacity: .8;
+  padding:18px;
+  border-radius: 10px;
+}
+
+
+.user-img img{
+  height: 150px;
+  width: 150px;
+}
+
+.form-group{
+  margin-bottom: 20px;
+}
+
+.form-group input{
+  height: 42px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 18px;
+  padding-left: 54px;
+}
+
+.btn-default{
+  font-size: 19px;
+  border-radius: 5px;
+  width: 150px;
+  border: 1px solid #47504e;
+}
+
+.btn-default:hover{
+  background-color: #47504e;
+  border: 1px solid #ebedee;
+  color: #ebedee;
+}
+
+form-control.text:{
+  
+  height: 100px;
+}
+
+.rating
+{
+  position: absolute;
+
+  transform: translate(-50,-50);
+  display: flex;
+}
+
+/* 
+
+.rating label{
+  display: block;
+  cursor:pointer;
+  width: 50px;
+  background: #ccc;
+}
+
+.rating lable::before
+{
+  content: "\f005";
+  font-family: fontAwesome;
+  position: relative;
+  display: block;
+  font-size: 50px;
+  color: #101010;
+} 
+
+.rating lable::before
+{
+  content: "\f005";
+  font-family: fontAwesome;
+  position: relative;
+  display: block;
+  font-size: 50px;
+  color: #1f9cff;
+  top: 0;
+  opacity: 1;
+  transition: .5s;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}  */  */
