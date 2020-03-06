@@ -17,7 +17,9 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/blogs/", function(req, res) {
-    db.Blog.create({...req.body, UserId: req.user.id}).then(function(dbBlog) {
+   var test=   {...req.body, UserId: req.user.id}
+  console.log(test);
+   db.Blog.create(test).then(function(dbBlog) {
       res.json(dbBlog);
     });
   });
