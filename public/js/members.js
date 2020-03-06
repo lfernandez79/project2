@@ -8,4 +8,34 @@ $(document).ready(function() {
     $(".member-name").text(emailSplitArry[0]);
     $(".member-email").text(data.email);
   });
+
+  $(".blogData").on("submit", function(event) {
+    event.preventDefault();
+    var newBlog = {
+      city: $("#city-input")
+        .val()
+        .trim(),
+      establishment: $("#establishment-input")
+        .val()
+        .trim(),
+      itemsOrdered: $("#itemsOrdered-input")
+        .val()
+        .trim(),
+      rating: $("#rating-input")
+        .val()
+        .trim(),
+      story: $("#blog-input")
+        .val()
+        .trim()
+    };
+
+    // send the post request
+    $.ajax("/api/blogs/", {
+      type: "POST",
+      data: newBlog
+    }).then(function() {
+      console.log("Created new blog");
+      location.reload();
+    });
+  });
 });
