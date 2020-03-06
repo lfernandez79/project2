@@ -36,7 +36,11 @@ $(document).ready(function() {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    if (err.responseJSON.errors[0].message === "users.email must be unique"){
+      const errTxt = 'Email already in use!';
+      $("#alert .msg").text(errTxt);
+    }
     $("#alert").fadeIn(500);
+    console.log(err.responseJSON);
   }
 });
