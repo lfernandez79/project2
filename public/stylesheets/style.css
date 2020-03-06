@@ -104,18 +104,18 @@ section:before{
   color: #ebedee;
 }
 
-form-control.text:{
+/* form-control.text:{
   
   height: 100px;
-}
+} */
 
-.rating
+/* .rating
 {
   position: absolute;
 
   transform: translate(-50,-50);
   display: flex;
-}
+} */
 
 /* 
 
@@ -148,4 +148,4 @@ form-control.text:{
   opacity: 1;
   transition: .5s;
   text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
-}  */  */
+}  */  

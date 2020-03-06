@@ -2,10 +2,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Blog = sequelize.define("Blog", {
     // Need to have e-mail automatically populated.
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // email: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
     city: {
       type: DataTypes.STRING,
       allowNull: false
@@ -27,5 +27,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
+  Blog.associate = function(models) {
+    // We're saying that a Blog should belong to an User
+    // A Post can't be created without an User due to the foreign key constraint
+    Blog.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Blog;
 };
