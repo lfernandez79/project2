@@ -27,7 +27,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-
   Blog.associate = function(models) {
     // We're saying that a Blog should belong to an User
     // A Post can't be created without an User due to the foreign key constraint
