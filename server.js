@@ -28,6 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
+require("./routes/blog-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
