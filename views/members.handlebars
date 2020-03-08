@@ -43,11 +43,26 @@
                     <button type="submit" class="btn btn-default">Create blog!</button>
                 </form>
             </div>
+            <br>
+            <div class="col-3">
+                <p>My email address is: <span class="member-email"></span></p>
+            </div>
+            <br>
 
-        <div class="col-3">
-            <p>My email address is: <span class="member-email"></span></p>
+            <ul class="blogList">
+                {{#each Blogs}}
+                <li>
+                    {{city}}
+                    {{establishment}}
+                    {{itemsordered}}
+                    {{rating}}
+                    {{blog}}
+                    <button class="delete-blog" data-id="{{this.id}}">Delete</button>
+                </li>
+                {{/each}}
+            </ul>
+
         </div>
-    </div>
 </section>
-    
-    <script type="text/javascript" src="js/members.js"></script>
+
+<script type="text/javascript" src="js/members.js"></script>

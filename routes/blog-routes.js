@@ -9,6 +9,20 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
+      include: [db.User, db.Blogs]
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+  // Get all
+  app.get("/api/blogs/", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.User
+    db.Blog.findAll({
+      where: {
+        UserId: 10
+      },
       include: [db.User]
     }).then(function(dbUser) {
       res.json(dbUser);
@@ -17,9 +31,9 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/blogs/", function(req, res) {
-   var test=   {...req.body, UserId: req.user.id}
-  console.log(test);
-   db.Blog.create(test).then(function(dbBlog) {
+    var test = { ...req.body, UserId: req.user.id };
+    console.log(test);
+    db.Blog.create(test).then(function(dbBlog) {
       res.json(dbBlog);
     });
   });
