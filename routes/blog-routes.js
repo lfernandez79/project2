@@ -9,7 +9,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.User, db.Blogs]
+      include: [db.User]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
