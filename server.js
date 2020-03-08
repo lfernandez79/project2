@@ -6,7 +6,7 @@ var passport = require("./config/passport");
 var exphbs = require("express-handlebars");
 require("dotenv").config();
 
-console.log("Zomato Api : " + process.env.zomatoApiKey);
+console.log("Zomato Api: " + process.env.zomatoApiKey);
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");

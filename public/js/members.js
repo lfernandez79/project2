@@ -1,3 +1,5 @@
+let userBlogs;
+
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -7,6 +9,16 @@ $(document).ready(function() {
     var emailSplitArry = emailString.split("@");
     $(".member-name").text(emailSplitArry[0]);
     $(".member-email").text(data.email);
+    console.log("email string: ", emailString);
+  });
+
+  $.get("/api/blogs").then(function(data) {
+    userBlogs = {
+      blogObject: data
+    };
+    $(".userBlogsTest").text(JSON.stringify(data));
+    console.log("get API blogs data hbsObj : ", userBlogs);
+    res.render("members", userBlogs);
   });
 
   $(".blogData").on("submit", function(event) {
