@@ -16,12 +16,14 @@ module.exports = function(app) {
   });
   // Get all
   app.get("/api/blogs/", function(req, res) {
+    let getApiBlogRes = res;
+    console.log("getApiBlogRes: " + res)
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
     db.Blog.findAll({
       where: {
-        UserId: 10
+        UserId: req.user.id
       },
       include: [db.User]
     }).then(function(dbUser) {
