@@ -70,6 +70,7 @@ $(document).ready(function() {
       console.log(response);
 
       var $newUl = $("<ul>");
+
       var $newLi = $(
         `<li class="list-unstyled text-dark text-left">${response.location_suggestions[0].name}</li>`
       );
@@ -89,8 +90,17 @@ $(document).ready(function() {
         "user-key": "59304a7ddb4b77672ec1dbd72b36a701",
         Accept: "application/json"
       }
-    }).then(function (response) {
+    }).then(function(response) {
+
+      var $newUl = $("<ul>");
+      var $newLi = $(
+        `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description}</li>`
+      );
+      $newLi.appendTo($newUl);
+      $newUl.appendTo("#cityList");
+
       console.log(response);
+      console.log(response.collections[0].collection.description);
       // idCity = response.location_suggestions[0].id;
       // console.log(idCity);
     });
