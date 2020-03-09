@@ -2,14 +2,14 @@ $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   // Gets user e-mail and renders everything in front of @ to the welcome section of the page while rendering email in email section.
-  $.get("/api/user_data").then(function (data) {
+  $.get("/api/user_data").then(function(data) {
     var emailString = data.email;
     var emailSplitArry = emailString.split("@");
     $(".member-name").text(emailSplitArry[0]);
     $(".member-email").text(data.email);
   });
 
-  $(".blogData").on("submit", function (event) {
+  $(".blogData").on("submit", function(event) {
     event.preventDefault();
     var newBlog = {
       city: $("#city-input")
@@ -33,7 +33,7 @@ $(document).ready(function() {
     $.ajax("/api/blogs/", {
       type: "POST",
       data: newBlog
-    }).then(function () {
+    }).then(function() {
       console.log("Created new blog");
       location.reload();
     });
@@ -58,7 +58,9 @@ $(document).ready(function() {
       async: true,
       crossDomain: true,
       url:
-        "https://developers.zomato.com/api/v2.1/cities?q=" + theCity + "&count=1",
+        "https://developers.zomato.com/api/v2.1/cities?q=" +
+        theCity +
+        "&count=1",
       method: "GET",
       headers: {
         "user-key": "59304a7ddb4b77672ec1dbd72b36a701",
@@ -72,7 +74,7 @@ $(document).ready(function() {
       var $newUl = $("<ul>");
 
       var $newLi = $(
-        `<li class="list-unstyled text-dark text-left">${response.location_suggestions[0].name}</li>`
+        `<li class="list-unstyled text-primary text-bold text-left">${response.location_suggestions[0].name}</li>`
       );
 
       console.log(response.location_suggestions[0].name);
@@ -84,23 +86,25 @@ $(document).ready(function() {
     });
 
     $.ajax({
-      url: "https://developers.zomato.com/api/v2.1/collections?city_id=" + idCity + "&count=3",
+      url:
+        "https://developers.zomato.com/api/v2.1/collections?city_id=" +
+        idCity +
+        "&count=3",
       method: "GET",
       headers: {
         "user-key": "59304a7ddb4b77672ec1dbd72b36a701",
         Accept: "application/json"
       }
     }).then(function(response) {
-
       var $newUl = $("<ul>");
       var $newLi = $(
-        `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description}</li>`
+        `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description} ${response.share_url}</li>`
       );
       $newLi.appendTo($newUl);
       $newUl.appendTo("#cityList");
 
       console.log(response);
-      console.log(response.collections[0].collection.description);
+      console.log(response.share_url);
       // idCity = response.location_suggestions[0].id;
       // console.log(idCity);
     });
