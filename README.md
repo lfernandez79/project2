@@ -15,7 +15,7 @@ project2 is a collaborative endeavour and the culmination of the SMU Coding Boot
 * [Getting Started](#Getting-started)
 * [Usage](#Usage)
 * [Contributing](#Contributing)
-* [Contacts](#Contacts)
+* [Contact](#Contact)
   * [Cody Switzer](https://cswitzer85.github.io/Basic-Portfolio/     "cswitzer85's GitHub")
   * [Leo Fernandez](#Leo-Fernandez)
   * [Gen Li](#Gen-Li)
@@ -48,7 +48,7 @@ Member Page ![alt text](https://github.com/lfernandez79/project2/blob/master/ass
 
 This project was completed as a collaborative group assignment for SMU Coding Boot Camp, and as such is not subject to any regular update or maintenance. However, if you would like to extend advise, inquire about the project or otherwise communicate about this project, please use any of the means in the contact section below.
 
-## Contacts
+## Contact
 
 * Cody Switzer
   * Cody Switzer on:  [GitHub](https://github.com/cswitzer85      "cswitzer85's GitHub")
