@@ -9,28 +9,31 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.User, db.Blogs]
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-  // Get all
-  app.get("/api/blogs/", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    db.Blog.findAll({
-      where: {
-        UserId: req.user.id
-      },
       include: [db.User]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
+  // Get all
+  // app.get("/api/blogs/", function(req, res) {
+  //   // Here we add an "include" property to our options in our findOne query
+  //   db.Blog.findAll({
+  //     where: {
+  //       UserId: req.user.id
+  //     },
+  //     include: [db.User]
+  //   }).then(function(userBlogs) {
+  //     res.json(userBlogs);
+  //     // res.send(userBlogs);
+  //     // res.render("members", userBlogs);
+  //     console.log("user blog in blog routes", userBlogs);
+  //   });
+  // });
 
   // POST route for saving a new post
   app.post("/api/blogs/", function(req, res) {
     var test = { ...req.body, UserId: req.user.id };
-    console.log(test);
+    console.log("This log is the value of test in blog routes: ", test);
     db.Blog.create(test).then(function(dbBlog) {
       res.json(dbBlog);
     });
