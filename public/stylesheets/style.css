@@ -51,7 +51,7 @@ background-size: 1000% 1000%;
 section:before{
   position: absolute;
   content: '';
-  height: 150px;
+  height: 200px;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -89,6 +89,7 @@ section:before{
   border: 0;
   font-size: 18px;
   padding-left: 54px;
+  font-family: 'Sen', sans-serif;;
 }
 
 .btn-default{
@@ -104,48 +105,34 @@ section:before{
   color: #ebedee;
 }
 
-/* form-control.text:{
-  
-  height: 100px;
-} */
 
-/* .rating
-{
-  position: absolute;
-
-  transform: translate(-50,-50);
-  display: flex;
-} */
-
-/* 
-
-.rating label{
-  display: block;
-  cursor:pointer;
-  width: 50px;
-  background: #ccc;
+.link{
+  float: right;
+ 
 }
 
-.rating lable::before
-{
-  content: "\f005";
-  font-family: fontAwesome;
-  position: relative;
-  display: block;
-  font-size: 50px;
-  color: #101010;
-} 
+.navbar-brand{
+   font-size: medium!important;
+}
 
-.rating lable::before
-{
-  content: "\f005";
-  font-family: fontAwesome;
-  position: relative;
-  display: block;
-  font-size: 50px;
-  color: #1f9cff;
-  top: 0;
-  opacity: 1;
-  transition: .5s;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
-}  */  
+
+/* font-family: 'Permanent Marker', cursive;
+font-family: 'Courgette', cursive;
+font-family: 'Satisfy', cursive;
+font-family: 'Kaushan Script', cursive;
+font-family: 'Sacramento', cursive;
+font-family: 'Luckiest Guy', cursive;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'Sen', sans-serif; */
+h2{
+  font-family: 'Kaushan Script', cursive;
+}
+h3{
+  font-family:'Sen', sans-serif;
+}
+
+textarea{
+  font-family: 'Sen', sans-serif;
+  font-size: larger !important;
+
+}
