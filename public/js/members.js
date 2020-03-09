@@ -86,7 +86,7 @@ $(document).ready(function() {
       var $newUl = $("<ul>");
 
       var $newLi = $(
-        `<li class="list-unstyled text-primary text-bold text-left">City: ${response.location_suggestions[0].name}</li>`
+        `<li class="list-unstyled text-primary text-bold text-left h4"><span style="color: black;" class="h4">City:</span> ${response.location_suggestions[0].name}</li>`
       );
 
       console.log(response.location_suggestions[0].name);
@@ -110,8 +110,8 @@ $(document).ready(function() {
     }).then(function(response) {
       var $newUl = $("<ul>");
       var $newLi = $(
-        `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description} 
-        <a href="${response.share_url}">Click for Zomato results!</a></li>`
+        `<li class="list-unstyled text-dark text-left h5">${response.collections[0].collection.description} 
+        <p class="h4"><a href="${response.share_url}">Click for Zomato results!</a></p></li>`
       );
       $newLi.appendTo($newUl);
       $newUl.appendTo("#cityList");
