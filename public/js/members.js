@@ -38,4 +38,75 @@ $(document).ready(function() {
       location.reload();
     });
   });
+
+  // API Call to get restaurants by city
+  var theCity;
+  // var cityCount;
+  var idCity;
+
+  $("#cityBtn").on("click", function(event) {
+    event.preventDefault();
+    $("ul").empty();
+
+    theCity = $("#cityInput").val();
+    console.log(theCity);
+
+    // cityCount = $("#quantity").val();
+    // console.log(cityCount);
+
+    var settings = {
+      async: true,
+      crossDomain: true,
+      url:
+        "https://developers.zomato.com/api/v2.1/cities?q=" +
+        theCity +
+        "&count=1",
+      method: "GET",
+      headers: {
+        "user-key": "59304a7ddb4b77672ec1dbd72b36a701",
+        Accept: "application/json"
+      }
+    };
+
+    $.ajax(settings).done(function(response) {
+      console.log(response);
+
+      var $newUl = $("<ul>");
+
+      var $newLi = $(
+        `<li class="list-unstyled text-primary text-bold text-left">${response.location_suggestions[0].name}</li>`
+      );
+
+      console.log(response.location_suggestions[0].name);
+      idCity = response.location_suggestions[0].id;
+      console.log(response.location_suggestions[0].id);
+
+      $newLi.appendTo($newUl);
+      $newUl.appendTo("#cityList");
+    });
+
+    $.ajax({
+      url:
+        "https://developers.zomato.com/api/v2.1/collections?city_id=" +
+        idCity +
+        "&count=3",
+      method: "GET",
+      headers: {
+        "user-key": "59304a7ddb4b77672ec1dbd72b36a701",
+        Accept: "application/json"
+      }
+    }).then(function(response) {
+      var $newUl = $("<ul>");
+      var $newLi = $(
+        `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description} ${response.share_url}</li>`
+      );
+      $newLi.appendTo($newUl);
+      $newUl.appendTo("#cityList");
+
+      console.log(response);
+      console.log(response.share_url);
+      // idCity = response.location_suggestions[0].id;
+      // console.log(idCity);
+    });
+  });
 });
