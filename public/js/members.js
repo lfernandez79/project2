@@ -99,7 +99,7 @@ $(document).ready(function() {
       var $newUl = $("<ul>");
       var $newLi = $(
         `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description} 
-        <a href="${response.share_url}">Click for Zomato results!</a></li>`
+        <p><a href="${response.share_url}">Click for Zomato results!</a></p></li>`
       );
       $newLi.appendTo($newUl);
       $newUl.appendTo("#cityList");
