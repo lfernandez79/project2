@@ -1,4 +1,4 @@
-let userBlogs;
+let Blogs;
 
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
@@ -11,15 +11,15 @@ $(document).ready(function() {
     $(".member-email").text(data.email);
     console.log("email string: ", emailString);
   });
-
-  $.get("/api/blogs").then(function(data) {
-    userBlogs = {
-      blogObject: data
-    };
-    $(".userBlogsTest").text(JSON.stringify(data));
-    console.log("get API blogs data hbsObj : ", userBlogs);
-    res.render("members", userBlogs);
-  });
+  // This GET request retrieves data from api/blogs url param and set userBlogs as object key as blogObject and
+  // the data returned is value. That way handlebars can use the object to render data on HTML screen.
+  // $.get("/api/blogs").then(function(data) {
+  //   Blogs = {
+  //     Blogs: data
+  //   };
+  //   // $(".userBlogsTest").text(JSON.stringify(data));
+  //   console.log("get API blogs data : ", Blogs);
+  // });
 
   $(".blogData").on("submit", function(event) {
     event.preventDefault();
