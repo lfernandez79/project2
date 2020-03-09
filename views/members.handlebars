@@ -3,9 +3,13 @@
     <!-- remove navbar-default -->
     <nav class="navbar">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/logout">
+            
+            <div class="navbar-header link">
+                <a class="navbar-brand btn" href="/logout">
                     Logout
+                </a>
+                <a class="navbar-brand btn" href="/deleteuser">
+                    Delete Account
                 </a>
             </div>
         </div>
@@ -32,7 +36,7 @@
             <!-- remove col-md-offset-3, change to col-md-12, add modal-content -->
             <div class="col-md-5 modal-content">
                 <h2>Welcome <span class="member-name"></span></h2>
-                <h2>Write a new blog!</h2>
+                <h3>Write a new blog!</h3>
                 <form class="blogData">
                     <div class="form-group">
                         <label for="blogData">City</label>
@@ -54,19 +58,18 @@
                     </div>
                     <div class="form-group">
                         <label for="blogData">Blog</label>
-                        <input type="blog" class="form-control" id="blog-input" placeholder="Blog" />
+                        {{!-- Change input to textarea --}}
+                        {{!-- <input type="blog" class="form-control" id="blog-input" placeholder="Blog"/> --}}
+                        <textarea rows="4" type="blog" class="form-control" id="blog-input" placeholder="Blog"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Create blog!</button>
                 </form>
             </div>
         </div>
-</div>
-
-        <div id="thirdRow" class="row">
             <div class="col-3">
-                <p class="text-center">My email address is: <span class="member-email"></span></p>
+                <p>My email address is: <span class="member-email"></span></p>
             </div>
-        </div>
+    </div>
 </section>
-    
-    <script type="text/javascript" src="js/members.js"></script>
+
+<script type="text/javascript" src="js/members.js"></script>

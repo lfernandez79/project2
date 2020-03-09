@@ -26,6 +26,15 @@ module.exports = function(app) {
       });
   });
 
+  //Route for deleting user/account
+  //might be app.delete
+  app.get("/deleteuser", function(req, res) {
+    // delete user from the database
+    db.User.destroy({ where: { id: req.user.id } }).then;
+    req.logout();
+    res.redirect("/");
+  });
+
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
