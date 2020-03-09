@@ -74,7 +74,7 @@ $(document).ready(function() {
       var $newUl = $("<ul>");
 
       var $newLi = $(
-        `<li class="list-unstyled text-primary text-bold text-left">${response.location_suggestions[0].name}</li>`
+        `<li class="list-unstyled text-primary text-bold text-left">City: ${response.location_suggestions[0].name}</li>`
       );
 
       console.log(response.location_suggestions[0].name);
@@ -98,7 +98,8 @@ $(document).ready(function() {
     }).then(function(response) {
       var $newUl = $("<ul>");
       var $newLi = $(
-        `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description} ${response.share_url}</li>`
+        `<li class="list-unstyled text-dark text-left">${response.collections[0].collection.description} 
+        <a href="${response.share_url}">Click for Zomato results!</a></li>`
       );
       $newLi.appendTo($newUl);
       $newUl.appendTo("#cityList");
